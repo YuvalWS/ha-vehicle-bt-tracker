@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100">
+  <!-- Icon scaled to 90x90, centred vertically at (5, 5) -->
+  <!-- scale = 90/256 = 0.3515625 -->
+  <g transform="translate(5,5) scale(0.3515625)">
+    <rect width="256" height="256" rx="44" fill="#1565C0"/>
+    <path d="M52 148 L82 88 Q89 74 106 74 L162 74 Q179 74 186 88 L212 148 Z" fill="white"/>
+    <path d="M98 143 L116 90 L162 90 L178 143 Z" fill="#1565C0" opacity="0.35"/>
+    <rect x="28" y="148" width="200" height="48" rx="11" fill="white"/>
+    <ellipse cx="78" cy="196" rx="28" ry="14" fill="#1565C0"/>
+    <ellipse cx="178" cy="196" rx="28" ry="14" fill="#1565C0"/>
+    <circle cx="78" cy="200" r="26" fill="#0D47A1" stroke="white" stroke-width="5"/>
+    <circle cx="78" cy="200" r="11" fill="#1565C0"/>
+    <circle cx="178" cy="200" r="26" fill="#0D47A1" stroke="white" stroke-width="5"/>
+    <circle cx="178" cy="200" r="11" fill="#1565C0"/>
+    <circle cx="200" cy="60" r="40" fill="#0D47A1"/>
+    <circle cx="200" cy="60" r="37" fill="#0A2774"/>
+    <path d="M 185 45 L 215 75 L 200 90 L 200 30 L 215 45 L 185 75"
+          stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="112" y="62"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        font-size="36" font-weight="700" fill="#1565C0">Vehicle BT Tracker</text>
+</svg>

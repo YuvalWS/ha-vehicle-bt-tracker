@@ -1,0 +1,75 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure Vehicle Tracker",
+        "description": "Name your vehicle and select every driver's phone from the list of registered Companion App devices.",
+        "data": {
+          "car_name": "Vehicle name",
+          "driver_devices": "Driver phones"
+        }
+      },
+      "driver_names": {
+        "title": "Name each driver",
+        "description": "Confirm or change the display name for each driver. The phone's device name is pre-filled — just hit submit to accept it."
+      },
+      "select_car": {
+        "title": "Select the vehicle's Bluetooth device",
+        "description": "Choose the vehicle from the list of devices your phones have been paired with.",
+        "data": {
+          "car_mac": "Paired Bluetooth device"
+        }
+      }
+    },
+    "error": {
+      "no_drivers": "Select at least one driver phone.",
+      "bt_sensor_not_found": "Could not find a Bluetooth Connection sensor for: {devices}. Enable the sensor in the Companion App (Settings → Companion App → Manage sensors → Bluetooth Connection) and try again.",
+      "no_paired_devices": "None of the selected phones expose any paired Bluetooth devices yet. Pair the phone with the car once, then retry."
+    },
+    "abort": {
+      "already_configured": "This vehicle is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Update driver phones",
+        "description": "Adjust which phones count as drivers for this vehicle.",
+        "data": {
+          "driver_devices": "Driver phones"
+        }
+      },
+      "driver_names": {
+        "title": "Update driver names",
+        "description": "Change the display name shown for each driver."
+      },
+      "select_car": {
+        "title": "Update vehicle Bluetooth device",
+        "description": "Pick the paired entry to monitor.",
+        "data": {
+          "car_mac": "Paired Bluetooth device"
+        }
+      }
+    },
+    "error": {
+      "no_drivers": "Select at least one driver phone.",
+      "bt_sensor_not_found": "Could not find a Bluetooth Connection sensor for: {devices}. Enable it in the Companion App and try again.",
+      "no_paired_devices": "None of the selected phones expose any paired Bluetooth devices yet."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "active_driver": {
+        "name": "Active driver"
+      },
+      "last_drive_duration": {
+        "name": "Last drive duration"
+      }
+    },
+    "binary_sensor": {
+      "in_use": {
+        "name": "In use"
+      }
+    }
+  }
+}

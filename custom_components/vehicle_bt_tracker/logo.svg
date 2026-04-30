@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- Rounded square background -->
+  <rect width="256" height="256" rx="44" fill="#1565C0"/>
+
+  <!-- Car cabin (roof) -->
+  <path d="M52 148 L82 88 Q89 74 106 74 L162 74 Q179 74 186 88 L212 148 Z" fill="white"/>
+  <!-- Windshield / window glass -->
+  <path d="M98 143 L116 90 L162 90 L178 143 Z" fill="#1565C0" opacity="0.35"/>
+
+  <!-- Car body (chassis) -->
+  <rect x="28" y="148" width="200" height="48" rx="11" fill="white"/>
+
+  <!-- Wheel arches (cutouts) -->
+  <ellipse cx="78" cy="196" rx="28" ry="14" fill="#1565C0"/>
+  <ellipse cx="178" cy="196" rx="28" ry="14" fill="#1565C0"/>
+
+  <!-- Wheels -->
+  <circle cx="78" cy="200" r="26" fill="#0D47A1" stroke="white" stroke-width="5"/>
+  <circle cx="78" cy="200" r="11" fill="#1565C0"/>
+  <circle cx="178" cy="200" r="26" fill="#0D47A1" stroke="white" stroke-width="5"/>
+  <circle cx="178" cy="200" r="11" fill="#1565C0"/>
+
+  <!-- Bluetooth badge circle (top-right, partially overlapping cabin) -->
+  <circle cx="200" cy="60" r="40" fill="#0D47A1"/>
+  <circle cx="200" cy="60" r="37" fill="#0A2774"/>
+
+  <!-- Bluetooth symbol centred on (200, 60), spine y=30..y=90 -->
+  <path d="M 185 45 L 215 75 L 200 90 L 200 30 L 215 45 L 185 75" 
+        stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

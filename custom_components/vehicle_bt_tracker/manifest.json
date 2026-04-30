@@ -1,0 +1,13 @@
+{
+  "domain": "vehicle_bt_tracker",
+  "name": "Vehicle Bluetooth Tracker",
+  "codeowners": ["@YuvalWS"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/YuvalWS/ha-vehicle-bt-tracker",
+  "integration_type": "device",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/YuvalWS/ha-vehicle-bt-tracker/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
