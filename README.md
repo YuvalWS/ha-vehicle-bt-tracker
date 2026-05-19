@@ -87,9 +87,7 @@ The sensor is off by default. You must enable it on **each** driver's phone befo
 
 **iOS**
 
-1. Open the Companion App and tap the **☰** menu → **Settings**.
-2. Tap **Sensors**.
-3. Find **Bluetooth Connection** and tap the toggle to enable it.
+Bluetooth sensor is unavailable on the IOS companion app
 
 ## Installation
 
