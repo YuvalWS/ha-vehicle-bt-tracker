@@ -71,6 +71,7 @@ The integration just listens for state changes on those sensors and runs a small
 ## Prerequisites
 
 - Home Assistant 2024.1 or newer.
+- **Android** phone for each driver — iOS is not supported (see below).
 - Home Assistant Companion App installed on each driver's phone.
 - The phone has been paired with the car at least once (otherwise nothing will show up in step 3 of the config flow).
 
@@ -85,9 +86,9 @@ The sensor is off by default. You must enable it on **each** driver's phone befo
 3. Scroll to the *Connectivity* section and tap **Bluetooth Connection**.
 4. Toggle **Enable sensor** on. The sensor entity appears in Home Assistant within a minute.
 
-**iOS**
+**iOS — not supported**
 
-Bluetooth sensor is unavailable on the IOS companion app
+The iOS Companion App cannot share Bluetooth connection state with other apps due to platform restrictions. The `connected_paired_devices` data this integration relies on is simply not available on iOS. This integration requires an Android phone for each driver.
 
 ## Installation
 
