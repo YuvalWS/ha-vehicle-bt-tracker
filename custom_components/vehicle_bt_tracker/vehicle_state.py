@@ -13,6 +13,7 @@ import re
 from homeassistant.core import Event, HomeAssistant, State, callback
 from homeassistant.helpers.dispatcher import async_dispatcher_send
 from homeassistant.helpers.event import async_track_state_change_event
+from homeassistant.helpers.start import async_at_started
 from homeassistant.util import dt as dt_util
 
 from .const import (
@@ -66,6 +67,7 @@ class VehicleStateRuntime:
     last_drive_duration_minutes: float = 0.0
 
     _unsub: callable | None = field(default=None, init=False, repr=False)
+    _unsub_started: callable | None = field(default=None, init=False, repr=False)
 
     @classmethod
     def from_config(
@@ -88,12 +90,22 @@ class VehicleStateRuntime:
         The initial evaluation never fires logbook events: at startup we are
         recovering ground truth, not transitioning. Real transitions are only
         emitted on subsequent listener-driven evaluations.
+
+        The misconfiguration check is deferred until Home Assistant has fully
+        started: the Companion App sensors may not exist yet while integrations
+        are still loading, which would produce false "does not exist" warnings.
         """
-        self._warn_about_misconfigured_drivers()
+        self._unsub_started = async_at_started(
+            self.hass, self._async_check_drivers_at_started
+        )
         self._unsub = async_track_state_change_event(
             self.hass, self.driver_entities, self._async_state_changed
         )
         self._evaluate(fire_events=False)
+
+    @callback
+    def _async_check_drivers_at_started(self, _hass: HomeAssistant) -> None:
+        self._warn_about_misconfigured_drivers()
 
     def _warn_about_misconfigured_drivers(self) -> None:
         """Log a one-shot warning if any configured driver entity isn't a BT sensor."""
@@ -119,6 +131,9 @@ class VehicleStateRuntime:
     @callback
     def async_stop(self) -> None:
         """Tear down listeners (called on config entry unload)."""
+        if self._unsub_started is not None:
+            self._unsub_started()
+            self._unsub_started = None
         if self._unsub is not None:
             self._unsub()
             self._unsub = None
